@@ -1,0 +1,45 @@
+﻿<Window x:Class="StrategyPattern.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StrategyPattern"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="0" Margin="5" Content="单价："></Label>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Name="TbPrice" Text="100"></TextBox>
+        <Button Grid.Row="0" Grid.Column="2" Margin="5" Name="BtnOk" Content="确定" Click="BtnOk_OnClick"></Button>
+        
+        <Label Grid.Row="1" Grid.Column="0" Margin="5" Content="数量：" ></Label>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Name="TbCount" Text="1"></TextBox>
+        <Button Grid.Row="1" Grid.Column="2" Margin="5" Name="BtnReset" Content="重置"></Button>
+
+        <Label Grid.Row="2" Grid.Column="0" Margin="5" Content="计算方式：" ></Label>
+        <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Name="CbDiscount" SelectedIndex="0">
+            <ComboBoxItem Content="正常"></ComboBoxItem>
+            <ComboBoxItem Content="打8折"></ComboBoxItem>
+            <ComboBoxItem Content="打7折"></ComboBoxItem>
+            <ComboBoxItem Content="打5折"></ComboBoxItem>
+            <ComboBoxItem Content="满300返100"></ComboBoxItem>
+        </ComboBox>
+        
+        <ListBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="5" Name="ListBoxSum"></ListBox>
+        
+        <Label Grid.Row="4" Grid.Column="0" Margin="5" Content="总计：" ></Label>
+        <Label Grid.Row="4" Grid.Column="1" Margin="5"  Name="LbTotal" Content="0.00" FontSize="30"></Label>
+    </Grid>
+</Window>
